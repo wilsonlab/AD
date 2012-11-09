@@ -1,0 +1,135 @@
+#
+# Borland C++ IDE generated makefile
+#
+.AUTODEPEND
+
+
+#
+# Borland C++ tools
+#
+IMPLIB  = Implib
+BCCDOS  = Bcc +BccDos.cfg 
+TLINK   = TLink
+TLIB    = TLib
+TASM    = Tasm
+#
+# IDE macros
+#
+
+
+#
+# Options
+#
+IDE_LFLAGSDOS =  -LE:\BC4\LIB
+IDE_BFLAGS = 
+LLATDOS_addexe =  -c -Tde -LC:\BC4\LIB -LC:\SRC
+RLATDOS_addexe =  -IC:\BC4\INCLUDE;C:\BC4\SVGA
+BLATDOS_addexe = 
+LEAT_addexe = $(LLATDOS_addexe)
+REAT_addexe = $(RLATDOS_addexe)
+BEAT_addexe = $(BLATDOS_addexe)
+CLATDOS_addc =  -Ot -Oc -v- -R- -k- -f -ff -Om -Op -Oi -Ov
+LLATDOS_addc = 
+RLATDOS_addc = 
+BLATDOS_addc = 
+CEAT_addc = $(CEAT_addexe) $(CLATDOS_addc)
+LEAT_addc = $(LEAT_addexe) $(LLATDOS_addc)
+REAT_addc = $(REAT_addexe) $(RLATDOS_addc)
+BEAT_addc = $(BEAT_addexe) $(BLATDOS_addc)
+
+#
+# Dependency List
+#
+Dep_ad = \
+   ad.exe
+
+ad : BccDos.cfg $(Dep_ad)
+  echo MakeNode ad
+
+Dep_addexe = \
+   svgautil.obj\
+	9513.obj\
+	adtrack.obj\
+	use1800.obj\
+   adio.obj\
+   addisp.obj\
+   addma.obj\
+   adamp.obj\
+   ad.obj
+
+ad.exe : $(Dep_addexe)
+  $(TLINK)   @&&|
+ /v $(IDE_LFLAGSDOS) $(LEAT_addexe) +
+C:\BC4\LIB\c0l.obj+
+svgautil.obj+
+adio.obj+
+9513.obj+
+use1800.obj+
+adtrack.obj+
+addisp.obj+
+addma.obj+
+adamp.obj+
+ad.obj
+$<,$*
+C:\BC4\LIB\graphics.lib+
+C:\BC4\LIB\fp87.lib+
+C:\BC4\LIB\mathl.lib+
+C:\BC4\LIB\cl.lib+
+C:\SRC\DAS1800.lib+
+C:\SRC\DASRFACE.lib
+
+|
+
+svgautil.obj :  svgautil.c
+  $(BCCDOS) -P- -c $(CEAT_addexe) -o$@ svgautil.c
+
+adio.obj :  adio.c
+  $(BCCDOS) -P- -c $(CEAT_addexe) -o$@ adio.c
+
+9513.obj :  9513.c
+  $(BCCDOS) -P- -c $(CEAT_addexe) -o$@ 9513.c
+
+adtrack.obj :  adtrack.c
+  $(BCCDOS) -P- -c $(CEAT_addexe) -o$@ adtrack.c
+
+addisp.obj :  addisp.c
+  $(BCCDOS) -P- -c $(CEAT_addexe) -o$@ addisp.c
+
+addma.obj :  addma.c
+  $(BCCDOS) -P- -c $(CEAT_addexe) -o$@ addma.c
+
+adamp.obj :  adamp.c
+  $(BCCDOS) -P- -c $(CEAT_addexe) -o$@ adamp.c
+
+ad.obj :  ad.c
+  $(BCCDOS) -P- -c $(CEAT_addc) -o$@ ad.c
+
+# Compiler configuration file
+BccDos.cfg : 
+   Copy &&|
+-W-
+-R
+-v
+-vi
+-X-
+-H
+-IE:\BC4\INCLUDE
+-H=grexam.csm
+-X-
+-Om
+-Op
+-Oi
+-Ov
+-Og
+-Ot
+-v-
+-R-
+-k-
+-wlin
+-IC:\BC4\INCLUDE;C:\BC4\SVGA
+-ml
+-f
+-Oa
+| $@
+
+
